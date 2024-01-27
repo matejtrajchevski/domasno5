@@ -1,0 +1,28 @@
+<div [ngClass]="klasi()"> 
+<!-- <div [ngClass]="['poz','course-card']">  -->
+    <!-- dve klasi ke gi konkatenira -->
+    <div class="course-title"  [ngStyle]="{'font-family':'cursive'}">
+        {{reden+'. '+vozac.name}}
+    </div> 
+    <ng-template #noImg>
+        <p>NEMA SLIKA</p>
+    </ng-template>
+    <img [src]="vozac.iconUrl" alt="ups" width="300px" *ngIf="vozac.iconUrl; else noImg">
+
+    <div class="course-description" [ngStyle]="stiliziranje()">
+        {{vozac.team}}
+    </div>
+
+    <div [ngStyle]="{'border':'2px solid gray','font-size':'15px','margin':'10px','border-color':'lightgray',}">
+        Points: {{vozac.pointers}}
+    </div>
+        <div class="course-category" [ngSwitch]="vozac.category">
+        <div class="category" *ngSwitchCase="'BEGINER'">Pocetnik</div>
+        <div class="category" *ngSwitchCase="'ADVANCED'">Profy</div>
+        <div class="category" *ngSwitchDefault>Nema vozacka</div>
+    </div>
+    <button (click)="klik()">Klikni</button>
+    
+    <!-- <div [ngStyle]="stiliziranje()">Proba</div> -->
+</div>
+

@@ -1,0 +1,18 @@
+<app-driver *ngFor="let vzc of vozaci; index as i; first as prv; last as posleden; odd as par; even as nepar"
+  [class.prv]="par"
+  [reden]="i+1" 
+  [vozac]="vzc"
+  (click)="appKlik(vzc)"
+  (cuci)="appKlik($event)">
+</app-driver>
+
+<!-- <app-driver *ngFor="let vzc of vozaci; index as i; first as prv; last as posleden; odd as par; even as nepar"
+[class.prv]="nepar"
+
+[reden]="i+1"
+[vozac]="vzc"
+(click)="appKlik()"
+(cuci)="appKlik($event)"></app-driver> -->
+
+<!-- <app-driver [ime]="anaj.name"></app-driver>
+<app-driver [ime]="anai.name"></app-driver> -->
